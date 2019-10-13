@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float MoveSpeed = 5f;
+    public float playerHealth = 100f;
 
     // Reference to Rigidbody
     public Rigidbody2D rb;
