@@ -22,5 +22,9 @@ public class Bullet : MonoBehaviour
             collision.collider.GetComponent<EnemyController>().health -= 10;
             Destroy(this.gameObject);
         }
+        if (collision.collider.CompareTag("Bullet"))
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

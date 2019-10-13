@@ -12,14 +12,16 @@ public class EnemyBullet : MonoBehaviour
     {
         if (collision.collider.CompareTag("Wall"))
         {
-            // GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
-            //Destroy(effect, 5f);
             Destroy(this.gameObject);
         }
 
         if (collision.collider.CompareTag("Player"))
         {
             collision.collider.GetComponent<PlayerMovement>().playerHealth -= 10;
+            Destroy(this.gameObject);
+        }
+        if (collision.collider.CompareTag("Bullet"))
+        {
             Destroy(this.gameObject);
         }
     }
