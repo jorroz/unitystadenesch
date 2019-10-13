@@ -118,4 +118,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7292dacc4839474596a406915e85bbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 0
+  stoppingDistance: 0
+  retreatDistance: 0
+  timeBtwShots: 0
+  startTimeBtwShots: 0
+  projectile: {fileID: 6383684517368293179, guid: 65323bd79a80bb94187c5d0c61cc4c1a,
+    type: 3}
+  Player: {fileID: 0}
   health: 100
+  healthBar: {fileID: 0}

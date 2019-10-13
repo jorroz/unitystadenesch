@@ -1056,6 +1056,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MoveSpeed: 5
+  playerHealth: 100
   rb: {fileID: 1702358190}
   cam: {fileID: 921398142}
 --- !u!114 &1702358196
