@@ -151,6 +151,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RoomObject: {fileID: 3336949629074606690, guid: 8b0c259a1c17f460faadffeedb21a871,
     type: 3}
+  DebugObject: {fileID: 8411364468315713548, guid: a0d796380df34475bbc62cb54dd03863,
+    type: 3}
+  DoorObject: {fileID: 4545380215068641676, guid: 2d2710e737f4f494981140469ae1f45b,
+    type: 3}
 --- !u!4 &61122258
 Transform:
   m_ObjectHideFlags: 0
