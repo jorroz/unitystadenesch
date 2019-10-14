@@ -1485,7 +1485,7 @@ PrefabInstance:
     - target: {fileID: 4598040827737050860, guid: 889dff17d7568554f97e808d1f0f4b0a,
         type: 3}
       propertyPath: startTimeBtwShots
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 889dff17d7568554f97e808d1f0f4b0a, type: 3}
