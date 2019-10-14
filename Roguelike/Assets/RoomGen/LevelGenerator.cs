@@ -17,6 +17,15 @@ namespace RoomGen
         private Room current;
 
         private uint erroredRooms;
+        private uint iteration;
+
+        private Func<Vector2Int, bool> debug;
+
+        public Func<Vector2Int, bool> Debug {
+            set {
+                debug = value;
+            }
+        }
 
         public LevelGenerator(int seed)
         {
@@ -28,15 +37,17 @@ namespace RoomGen
             rand = new System.Random();
         }
 
-        public bool Generate() {
+        public bool Generate()
+        {
             erroredRooms = 0;
             CreateRoomsFromDefinition();
             RandomlyPlaceRooms();
             return erroredRooms > 0;
         }
 
-        public void AddRoomDef( RoomDefinition def ) {
-            roomDefs.Add( def );
+        public void AddRoomDef(RoomDefinition def)
+        {
+            roomDefs.Add(def);
         }
 
         private void CreateRoomsFromDefinition()
@@ -82,8 +93,10 @@ namespace RoomGen
             root.y = 0;
             placedRooms.Add(root);
 
+            iteration = 0;
             while (pendingRooms.Count > 0)
             {
+                iteration ++;
                 GeneratorIteration();
             }
         }
@@ -133,9 +146,9 @@ namespace RoomGen
                 {
                     int y;
 
-                    y = room.X1 - current.width;
+                    y = room.Y1 - current.height;
                     CheckAndAddPosition(x, y);
-                    y = room.X2;
+                    y = room.Y2;
                     CheckAndAddPosition(x, y);
                 }
             }
@@ -149,13 +162,16 @@ namespace RoomGen
 
             if (positions.Count > 0)
             {
-                Vector2Int pos = positions[ rand.Next( positions.Count ) ];
+                Vector2Int pos = positions[rand.Next(positions.Count)];
                 current.Coords1 = pos;
+                placedRooms.Add( current );
+                current.iteration = iteration;
             }
             else
             {
                 current.error = true;
                 erroredRooms += 1;
+                current.iteration = 0;
             }
         }
     }

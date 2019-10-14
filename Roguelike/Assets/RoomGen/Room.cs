@@ -10,6 +10,8 @@ namespace RoomGen
         public int width;
         public int height;
 
+        internal uint iteration = 0U;
+
         internal bool error = false;
 
         public readonly List<Room> adjacentRooms = new List<Room>();
@@ -18,6 +20,19 @@ namespace RoomGen
         public bool Error {
             get {
                 return error;
+            }
+        }
+
+        public Vector2Int Size
+        {
+            get
+            {
+                return new Vector2Int(width, height);
+            }
+            set
+            {
+                width = value.x;
+                height = value.y;
             }
         }
 
