@@ -14,7 +14,7 @@ public class EnemyController : MonoBehaviour
 
 
     public GameObject projectile;
-    public Transform Player;
+    public Transform player;
    
 
 
@@ -28,7 +28,7 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
 
-        Player = GameObject.FindGameObjectWithTag("Player").GetComponent <Transform>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent <Transform>();
         timeBtwShots = startTimeBtwShots;
 
         //health = startHealth;
@@ -40,20 +40,20 @@ public class EnemyController : MonoBehaviour
     {
         healthBar.fillAmount = health / 100f;
 
-        if (Vector2.Distance(transform.position, Player.position) > stoppingDistance)
+        if (Vector2.Distance(transform.position, player.position) > stoppingDistance)
         {
 
-            transform.position = Vector2.MoveTowards(transform.position, Player.position, speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
         }
-        else if (Vector2.Distance(transform.position, Player.position) < stoppingDistance && Vector2.Distance(transform.position, Player.position) > retreatDistance)
+        else if (Vector2.Distance(transform.position, player.position) < stoppingDistance && Vector2.Distance(transform.position, player.position) > retreatDistance)
         {
 
             transform.position = this.transform.position;
         }
-        else if (Vector2.Distance(transform.position, Player.position) < retreatDistance)
+        else if (Vector2.Distance(transform.position, player.position) < retreatDistance)
         {
 
-            transform.position = Vector2.MoveTowards(transform.position, Player.position, -speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, player.position, -speed * Time.deltaTime);
         }
 
         if (timeBtwShots <=0){
