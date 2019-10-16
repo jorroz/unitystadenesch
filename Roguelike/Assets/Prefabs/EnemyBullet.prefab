@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6812261553096292120}
   - component: {fileID: 6076520704844375808}
   - component: {fileID: 7824156391232513141}
-  - component: {fileID: 4635450746172048947}
+  - component: {fileID: -4354723096956890656}
   m_Layer: 0
   m_Name: EnemyBullet
   m_TagString: Bullet
@@ -119,26 +119,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c390d40076876514ea436b8326743c2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 10
   hitEffect: {fileID: 6383684517368293179}
---- !u!50 &4635450746172048947
-Rigidbody2D:
-  serializedVersion: 4
+--- !u!114 &-4354723096956890656
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6383684517368293179}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9915d809690954d71b308fc76f9408f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
