@@ -20,6 +20,8 @@ public class EnemyController : MonoBehaviour
 
     public Rigidbody2D body;
 
+    private Transform healthCanvas;
+
 
 
     //public int startHealth = 100;
@@ -34,6 +36,7 @@ public class EnemyController : MonoBehaviour
 
         body = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        healthCanvas = transform.GetChild( 0 );
         timeBtwShots = startTimeBtwShots;
 
         //health = startHealth;
@@ -48,6 +51,8 @@ public class EnemyController : MonoBehaviour
         Vector2 diff = player.position - transform.position;
         float expectedAngle = Mathf.Atan2(diff.y, diff.x) / Mathf.PI * 180;
         transform.rotation = Quaternion.Euler(0, 0, expectedAngle);
+
+        healthCanvas.rotation = Quaternion.Euler( 0, 0, 0 );
 
         if (timeBtwShots <= 0)
         {
