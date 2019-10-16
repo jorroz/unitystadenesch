@@ -913,6 +913,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1447152651 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4598040827737050863, guid: 889dff17d7568554f97e808d1f0f4b0a,
+    type: 3}
+  m_PrefabInstance: {fileID: 4598040826230973322}
+  m_PrefabAsset: {fileID: 0}
+--- !u!58 &1447152654
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1447152651}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &1702358189
 GameObject:
   m_ObjectHideFlags: 0
@@ -924,10 +946,10 @@ GameObject:
   - component: {fileID: 1702358194}
   - component: {fileID: 1702358193}
   - component: {fileID: 1702358192}
-  - component: {fileID: 1702358191}
   - component: {fileID: 1702358190}
   - component: {fileID: 1702358195}
   - component: {fileID: 1702358196}
+  - component: {fileID: 1702358191}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -956,8 +978,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &1702358191
-BoxCollider2D:
+--- !u!58 &1702358191
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -970,18 +992,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Radius: 0.5
 --- !u!23 &1702358192
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1397,6 +1409,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_ConnectedAnchor.x
+      value: 3.76
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_ConnectedAnchor.y
+      value: -2.15
+      objectReference: {fileID: 0}
     - target: {fileID: 4598040827737050863, guid: 889dff17d7568554f97e808d1f0f4b0a,
         type: 3}
       propertyPath: m_Name
@@ -1470,7 +1490,7 @@ PrefabInstance:
     - target: {fileID: 4598040827737050860, guid: 889dff17d7568554f97e808d1f0f4b0a,
         type: 3}
       propertyPath: speed
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4598040827737050860, guid: 889dff17d7568554f97e808d1f0f4b0a,
         type: 3}
@@ -1487,5 +1507,11 @@ PrefabInstance:
       propertyPath: startTimeBtwShots
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4598040827737050860, guid: 889dff17d7568554f97e808d1f0f4b0a,
+        type: 3}
+      propertyPath: inertia
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4598040827737050850, guid: 889dff17d7568554f97e808d1f0f4b0a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 889dff17d7568554f97e808d1f0f4b0a, type: 3}

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4598040827737050851}
   - component: {fileID: 4598040827737050850}
   - component: {fileID: 4598040827737050860}
+  - component: {fileID: -5309929334232435121}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -123,8 +124,31 @@ MonoBehaviour:
   retreatDistance: 0
   timeBtwShots: 0
   startTimeBtwShots: 0
+  inertia: 1
   projectile: {fileID: 6383684517368293179, guid: 65323bd79a80bb94187c5d0c61cc4c1a,
     type: 3}
-  Player: {fileID: 0}
+  player: {fileID: 0}
+  body: {fileID: 0}
   health: 100
   healthBar: {fileID: 0}
+--- !u!50 &-5309929334232435121
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4598040827737050863}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
