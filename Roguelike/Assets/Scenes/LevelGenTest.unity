@@ -151,6 +151,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RoomObject: {fileID: 3336949629074606690, guid: 8b0c259a1c17f460faadffeedb21a871,
     type: 3}
+  DebugObject: {fileID: 8411364468315713548, guid: a0d796380df34475bbc62cb54dd03863,
+    type: 3}
+  DoorObject: {fileID: 4545380215068641676, guid: 2d2710e737f4f494981140469ae1f45b,
+    type: 3}
 --- !u!4 &61122258
 Transform:
   m_ObjectHideFlags: 0
@@ -218,7 +222,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -243,7 +247,7 @@ Transform:
   m_GameObject: {fileID: 176110907}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0

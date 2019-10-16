@@ -11,8 +11,10 @@ namespace Roguelike
         public LevelGenerator generator = new LevelGenerator();
         public GameObject RoomObject;
         public GameObject DebugObject;
+        public GameObject DoorObject;
 
         private readonly GameObject[] roomObjects = new GameObject[20];
+        private GameObject[] doorObjects;
 
         private int gen = 0;
 
@@ -45,6 +47,15 @@ namespace Roguelike
                     Destroy(obj);
                 }
 
+                if (doorObjects != null)
+                {
+                    foreach (GameObject obj in doorObjects)
+                    {
+                        if (obj == null) continue;
+                        Destroy(obj);
+                    }
+                }
+
                 for (int i = 0; i < 20; i++)
                 {
                     roomObjects[i] = Instantiate(RoomObject, new Vector3(), new Quaternion());
@@ -73,6 +84,32 @@ namespace Roguelike
                     obj.transform.localScale = new Vector3(room.width / 4F, room.height / 4F, 1);
                     obj.transform.position = new Vector3(room.x + room.width / 2F, room.y + room.height / 2F, 0);
                     print("Placed");
+                }
+
+                List<Door> doors = generator.Doors;
+                doorObjects = new GameObject[doors.Count];
+                uint it = 0;
+                foreach (Door door in generator.Doors)
+                {
+                    GameObject obj = doorObjects[it] = Instantiate(DoorObject, new Vector3(), new Quaternion());
+
+                    obj.transform.localScale = new Vector3(1 / 4F, 1 / 4F, 1);
+                    obj.transform.position = new Vector3(door.x + 1 / 2F, door.y + 1 / 2F, 0);
+                    float rot = 0;
+                    switch (door.Direction)
+                    {
+                        case EFacing2D.POSX:
+                            rot = -90F;
+                            break;
+                        case EFacing2D.NEGX:
+                            rot = 90F;
+                            break;
+                        case EFacing2D.NEGY:
+                            rot = 180F;
+                            break;
+                    }
+                    obj.transform.rotation = Quaternion.Euler(0, 0, rot);
+                    it++;
                 }
             }
             gen--;

@@ -17,8 +17,10 @@ namespace RoomGen
         public readonly List<Room> adjacentRooms = new List<Room>();
 
         /// <summary>A boolean that will be <c>true</c> when the room could not be placed, otherwise it's <c>false</c></summary>
-        public bool Error {
-            get {
+        public bool Error
+        {
+            get
+            {
                 return error;
             }
         }
