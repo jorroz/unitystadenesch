@@ -10,7 +10,6 @@ public class EnemyBullet : MonoBehaviour
     private Transform player;
     private Vector2 target;
 
-
     public GameObject hitEffect;
 
     void Start()
